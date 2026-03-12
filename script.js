@@ -26,14 +26,17 @@ document.getElementById("rsvpForm").addEventListener("submit", function(e){
   formData.append("message", document.getElementById("message").value);
 
   
-  fetch(url, { method: "POST", body: formData })
-  .then(response => response.text())
-  .then(data => {
-      document.getElementById("response").innerHTML = "Thank you! Your RSVP has been sent.";
-      document.getElementById("rsvpForm").reset();
-  })
-  .catch(error => {
-      document.getElementById("response").innerHTML = "There was an error. Please try again.";
-      console.error(error);
-  });
-});
+  fetch(url, {
+  method: "POST",
+  mode: "no-cors",
+  body: formData
+})
+.then(() => {
+  document.getElementById("response").innerHTML =
+  "Thank you! Your RSVP has been sent.";
+  document.getElementById("rsvpForm").reset();
+})
+.catch(error => {
+  document.getElementById("response").innerHTML =
+  "There was an error. Please try again.";
+}); });
