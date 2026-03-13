@@ -18,7 +18,7 @@ const timer = setInterval(function(){
 document.getElementById("rsvpForm").addEventListener("submit", function(e){
   e.preventDefault(); 
 
-  const url = "https://script.google.com/macros/s/AKfycbzsD5kFG5VlSh3dTVebmt5jlTH5P-Ya0nQ-G-GfmXjm2arYyxgrv6FYkUkQmn39CzsF/exec"; 
+  const url = "https://script.google.com/macros/s/AKfycbzsD5kFG5VlSh3dTVebmt5jlTH5P-Ya0nQ-G-GfmXjm2arYyxgrv6FYkUkQmn39CzsF/exechttps://script.google.com/macros/s/AKfycbzsD5kFG5VlSh3dTVebmt5jlTH5P-Ya0nQ-G-GfmXjm2arYyxgrv6FYkUkQmn39CzsF/exec"; 
   const formData = new FormData();
   formData.append("email", document.getElementById("email").value);
   formData.append("name", document.getElementById("name").value);
