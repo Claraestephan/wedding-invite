@@ -79,24 +79,31 @@ We invite you to celebrate this special moment with us.
 
 <h2>Confirm Your Attendance</h2>
 
-<form id="rsvpForm">
-    <input type="email" placeholder="Your Email" required id="email">
-
-<input type="text" placeholder="Your Name" required id="name">
-
-<input type="number" placeholder="Number of Guests" required id="guests">
-
-<textarea placeholder="Message (optional)" id="message"></textarea>
-
-<button type="submit">Confirm</button>
-
+<form id="rsvpForm" method="POST" action="submit.php">
+    <input type="email" placeholder="Your Email" required name="email">
+    <input type="text" placeholder="Your Name" required name="name">
+    <input type="number" placeholder="Number of Guests" required name="guests">
+    <textarea placeholder="Message (optional)" name="message"></textarea>
+    <button type="submit">Confirm</button>
 </form>
 
-<p id="response"></p>
+<?php
+if(isset($_GET['status'])){
+    if($_GET['status'] == 'success'){
+        echo '<p id="response">Thank you! Your RSVP has been sent.</p>';
+    } else {
+        echo '<p id="response">There was an error. Please try again.</p>';
+    }
+}
+?>
+
 
 </section>
+
+
 
 <script src="script.js"></script>
 
 </body>
 </html>
+
